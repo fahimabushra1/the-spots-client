@@ -5,6 +5,10 @@ import About from "../pages/About";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import MainLayout from "../layouts/MainLayout";
+import Menu from "../pages/Menu";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Dashboard from "../pages/Dashboard";
+import Shop from "../pages/Shop";
 
 export const router = createBrowserRouter([
     {
@@ -14,6 +18,14 @@ export const router = createBrowserRouter([
             {
                 path:"/",
                 element:<Home/>
+            },
+            {
+                path:"/menu",
+                element:<Menu/>
+            },
+            {
+                path:"/shop",
+                element:<Shop/>
             },
             {
                 path:"/about",
@@ -30,6 +42,16 @@ export const router = createBrowserRouter([
             {
                 path:"/outlets",
                 element:<Outlets/>
+            },
+        ]
+    },
+    {
+        path:"/dashboard",
+        element:<DashboardLayout/>,
+        children: [
+            {
+                path:"",
+                element:<Dashboard/>
             },
         ]
     },

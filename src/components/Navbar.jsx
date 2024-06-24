@@ -1,17 +1,25 @@
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const navOptions = <>
-     <li><a>Item 1</a></li>
+    const navOptions = 
+    <>
+     <li><Link to={'/'}>HOME</Link></li>
       <li>
         <details>
-          <summary>Parent</summary>
+          <summary>TOPICS</summary>
           <ul className="p-2">
             <li><a>Submenu 1</a></li>
             <li><a>Submenu 2</a></li>
           </ul>
         </details>
       </li>
-      <li><a>Item 3</a></li>
+      <li><Link to={'/outlets'}>CONTACT US</Link></li>
+      <li><Link to={'/dashboard'}>DASHBOARD</Link></li>
+      <li><Link to={'/menu'}>OUR MENU</Link></li>
+      <li><Link to={'/shop'}>OUR SHOP</Link></li>
+    <div className="mx-2">
+    <a className="btn">SIGN OUT</a>
+  </div>
     </>
     return (
         <div>
@@ -35,6 +43,11 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <div className="avatar placeholder">
+  <div className="bg-neutral text-neutral-content w-10 rounded-full">
+    <span className="text-xs">UI</span>
+  </div>
+</div>
        {navOptions}
       </ul>
     </div>
@@ -44,9 +57,11 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1">
     {navOptions}
     </ul>
+    <div className="avatar placeholder">
+  <div className="bg-neutral text-neutral-content w-10 rounded-full">
+    <span className="text-xs">UI</span>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+</div>
   </div>
 </div>
         </div>
